@@ -42,6 +42,8 @@ class Formater
      */
     public static function dataUnits()
     {
+      if(self::$units == null)
+      {
         self::$units = [
             'fr' => [
                 '1' => 'un', '2' => 'deux', '3' => 'trois', '4' => 'quatre',
@@ -54,6 +56,7 @@ class Formater
                 '9'=> 'nine'
             ]
         ];
+      }
         return self::$units;
     }
 
@@ -62,26 +65,29 @@ class Formater
      */
     public static function dataDozens()
     {
-        self::$dozens = [
-            'fr' => [
-                '10' => 'dix', '11' => 'onze', '12' => 'douze', '13' => 'treize',
-                '14' => 'quatorze', '15' => 'quinze', '16' => 'seize', '17' => 'dix-sept', 
-                '18' => 'dix-huit', '19' => 'dix-neuf', '20' => 'vingt', '30' => 'trente',
-                '40' => 'quarante', '50' => 'cinquante','60' => 'soixante', '70' => 'soixante-dix',
-                '71' => 'soixante-onze', '72' => 'soixante-douze', '73' => 'soixante-treize',
-                '74' => 'soixante-quatorze', '75' => 'soixante-quinze', '76' => 'soixante-seize',
-                '80' => 'quatre-vingt', '90' => 'quatre-vingt-dix','91' => 'quatre-vingt-onze', 
-                '92' => 'quatre-vingt-douze', '93' => 'quatre-vingt-treize','94' => 'quatre-vingt-quatorze', 
-                '95' => 'quatre-vingt-quinze', '96' => 'quatre-vingt-seize',
-            ],
-            'en' => [
-                '10' => 'ten', '11' => 'eleven', '12' => 'twelve', '13' => 'thirteen',
-                '14' => 'fourteen', '15' => 'fifteen', '16' => 'sixteen','17' => 'seventeen', 
-                '18' => 'eighteen', '19' => 'nineteen', '20' => 'twenty','30' => 'thirty', 
-                '40' => 'fourty', '50' => 'fifty', '60' => 'sixty', '70' => 'seventy', 
-                '80' => 'eighty', '90' => 'ninety',
-            ]
-        ];
+        if(self::$dozens == null)
+        {
+            self::$dozens = [
+                'fr' => [
+                    '10' => 'dix', '11' => 'onze', '12' => 'douze', '13' => 'treize',
+                    '14' => 'quatorze', '15' => 'quinze', '16' => 'seize', '17' => 'dix-sept', 
+                    '18' => 'dix-huit', '19' => 'dix-neuf', '20' => 'vingt', '30' => 'trente',
+                    '40' => 'quarante', '50' => 'cinquante','60' => 'soixante', '70' => 'soixante-dix',
+                    '71' => 'soixante-onze', '72' => 'soixante-douze', '73' => 'soixante-treize',
+                    '74' => 'soixante-quatorze', '75' => 'soixante-quinze', '76' => 'soixante-seize',
+                    '80' => 'quatre-vingt', '90' => 'quatre-vingt-dix','91' => 'quatre-vingt-onze', 
+                    '92' => 'quatre-vingt-douze', '93' => 'quatre-vingt-treize','94' => 'quatre-vingt-quatorze', 
+                    '95' => 'quatre-vingt-quinze', '96' => 'quatre-vingt-seize',
+                ],
+                'en' => [
+                    '10' => 'ten', '11' => 'eleven', '12' => 'twelve', '13' => 'thirteen',
+                    '14' => 'fourteen', '15' => 'fifteen', '16' => 'sixteen','17' => 'seventeen', 
+                    '18' => 'eighteen', '19' => 'nineteen', '20' => 'twenty','30' => 'thirty', 
+                    '40' => 'fourty', '50' => 'fifty', '60' => 'sixty', '70' => 'seventy', 
+                    '80' => 'eighty', '90' => 'ninety',
+                ]
+            ];
+        }
         return self::$dozens;
     }
 
@@ -91,10 +97,13 @@ class Formater
     public static function dataHundreds()
     {
         // this array contains hundred
-        self::$hundreds = [
-            'fr' => ['100' => 'cent'],
-            'en' => ['100' => 'hundred']
-        ];
+        if(self::$hundreds == null)
+        {
+            self::$hundreds = [
+                'fr' => ['100' => 'cent'],
+                'en' => ['100' => 'hundred']
+            ];
+        }
         return self::$hundreds;
     }
 
@@ -103,7 +112,10 @@ class Formater
      */
     public static function dataLang()
     {
-        self::$languages = ['fr', 'en'];
+        if(self::$languages == null)
+        {
+            self::$languages = ['fr', 'en'];
+        }
         return self::$languages;
 
     }
@@ -113,10 +125,13 @@ class Formater
      */
     public static function dataMillions()
     {
-        self::$millions = [
-            'fr' => ['M' => 'millions'],
-            'en' => ['M' => 'millions']
-        ];
+        if(self::$millions == null)
+        {
+            self::$millions = [
+                'fr' => ['M' => 'millions'],
+                'en' => ['M' => 'millions']
+            ];
+        }
         return self::$millions;
     }
 
@@ -125,10 +140,13 @@ class Formater
      */
     public static function dataThousands()
     {
-        self::$thousands = [
-            'fr' => ['k' => 'milles'],
-            'en' => ['k' => 'thousands']
-        ]; 
+        if(self::$thousands == null)
+        {
+            self::$thousands = [
+                'fr' => ['k' => 'milles'],
+                'en' => ['k' => 'thousands']
+            ]; 
+        }
         return self::$thousands;
     }
 
